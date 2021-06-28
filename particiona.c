@@ -6,9 +6,14 @@
 /* v[i] <= x, para todo a <= i <=m */
 /* x < v[i], para todo m < i <=b */
 
-int particiona(int v[], int a, int b, int x) {
+int particiona(int v[],int a,int b,int x){
+    int m:a-1;
 
-  int m;
-
-  return m;
+    for (int i = a; i <= b; ++i)
+        if v[i]<=x
+        {
+            m++;
+            Troca(v,m,i)
+        }
+    return m;
 }
