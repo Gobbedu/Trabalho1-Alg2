@@ -7,13 +7,13 @@
 /* x < v[i], para todo m < i <=b */
 
 int particiona(int v[],int a,int b,int x){
-    int m:a-1;
+    int m=a-1;
 
     for (int i = a; i <= b; ++i)
         if v[i]<=x
         {
             m++;
-            Troca(v,m,i)
+            troca(v,m,i)
         }
     return m;
 }
