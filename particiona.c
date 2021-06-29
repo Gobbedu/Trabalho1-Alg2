@@ -12,7 +12,8 @@ int particiona(int v[],int a,int b,int x){
     for (int i = a; i <= b; ++i)
         if (v[i]<=x){
             m++;
-            troca(v,m,i);
+	    if(m != i)
+                troca(v,m,i);
         }
     return m;
 }
