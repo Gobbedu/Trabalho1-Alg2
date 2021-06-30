@@ -7,19 +7,19 @@
 
 static int mediana(int a, int b, int c) { //Árvore de comparações para achar o elemento mediano
 	int x;	
-	if (compara(b,a)==1)
-		if (compara(c,a)==1)
-			if (compara(c,b)==1)
+	if (compara(b,a)>=0)
+		if (compara(c,a)>=0)
+			if (compara(c,b)>=0)
 				x=b;
 			else
 				x=c;
 		else
 			x=a;
 	else
-		if (compara(c,a)==1)
+		if (compara(c,a)>=0)
 			x=a;
 		else
-			if (compara(c,b)==1)
+			if (compara(c,b)>=0)
 				x=c;
 			else
 				x=b;
