@@ -10,8 +10,11 @@ int particiona(int v[],int a,int b,int x){
     int m=a-1;
 
     for (int i = a; i <= b; ++i)
-        if (v[i]<=x){
+	/* se v[i] <= x ... */
+        if (compara(v[i],x) <= 0){
             m++;
+
+	    /* se m == i nao precisa trocar */
 	    if(m != i)
                 troca(v,m,i);
         }

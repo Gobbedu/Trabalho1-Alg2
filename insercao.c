@@ -4,16 +4,34 @@
 /* ordena v[a..b] pelo m�todo da sele��o e devolve v */
 
 int BuscaSimples(int x, int v[], int a, int b){
-  while( x < v[b] && b >= a)
+  while( compara(v[b], x) == 1 && b >= a)
     b--;
   return b;
+}
+
+int BuscaBina(int x, int v[], int a, int b){
+        int m;
+        m = (a + b)/2;
+        
+        if( a >= b ){
+		if( compara(x, v[m]) == -1 )
+			return m-1;
+		return m;
+	}
+        
+	if ( compara(x, v[m]) == 0 )
+		return m;
+	else if( compara(x, v[m]) == -1 )
+                BuscaBina(x, v, a, m-1);
+        else
+                BuscaBina(x, v, m+1, b);
 }
 
 /* ==== insere v[b] no vetor ordenado v[a..b-1] ==== */
 int *insere(int v[], int a, int b) {
   int p, i;
 
-  p = BuscaSimples(v[b], v, a, b-1);
+  p = BuscaBina(v[b], v, a, b-1);
   i = b;
 
   while( i > p+1 ){ /* empurra tudo para direita ao colocar v[b] */
